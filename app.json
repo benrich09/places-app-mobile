@@ -36,7 +36,11 @@
           }
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-font",
+      "expo-status-bar",
+      "expo-web-browser",
+      "@react-native-vector-icons/ionicons"
     ],
     "experiments": {
       "typedRoutes": true,
@@ -47,6 +51,12 @@
       "eas": {
         "projectId": "d6b6417f-d6fb-4901-b88a-c608b20ac7ee"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d6b6417f-d6fb-4901-b88a-c608b20ac7ee"
     }
   }
 }
