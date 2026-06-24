@@ -1,15 +1,35 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { Stack } from 'expo-router';
+import { Provider } from 'react-redux';
+import { store } from '../store/index';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <Provider store={store}>
+      <StatusBar style="light" />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(auth)" />
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen
+          name="map"
+          options={{
+            headerShown: true,
+            headerStyle: { backgroundColor: '#006400' },
+            headerTintColor: '#fff',
+            headerTitle: 'Map',
+          }}
+        />
+        <Stack.Screen
+          name="place-detail"
+          options={{
+            headerShown: true,
+            headerStyle: { backgroundColor: '#006400' },
+            headerTintColor: '#fff',
+            headerTitle: 'Place Details',
+          }}
+        />
+      </Stack>
+    </Provider>
   );
 }

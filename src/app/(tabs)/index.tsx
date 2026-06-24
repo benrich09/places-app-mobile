@@ -6,8 +6,8 @@ import {
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store/index';
-import { PlaceCategory, CATEGORY_CONFIG, TANZANIA_CITIES } from '../types/index';
+import { RootState } from '../../store/index';
+import { PlaceCategory, CATEGORY_CONFIG, TANZANIA_CITIES } from '../../types/index';
 
 const categories: PlaceCategory[] = ['hotel', 'gym', 'hospital', 'restaurant', 'mall'];
 
